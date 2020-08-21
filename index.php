@@ -1,5 +1,13 @@
 <?php
+
+	require_once 'config/conexion.php';
 	require_once 'templates/header.php';
+
+	if (isset($_POST['login'])) {
+		$email = trim($_POST['email']);
+		$password = $_POST['password'];
+	}
+
 ?>
 	
 	<div class="limiter">
@@ -11,16 +19,16 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="index.php" method="POST">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Usuario</span>
-						<input class="input100" type="text" name="username" placeholder="Ingresa tú usuario...">
+						<span class="label-input100">Correo</span>
+						<input class="input100" type="email" name="email" placeholder="Ingresa tú usuario...">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="password" name="pass" placeholder="Ingresa tú contraseña...">
+						<input class="input100" type="password" name="password" placeholder="Ingresa tú contraseña...">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -33,13 +41,15 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn mr-2">
-							Ingresar
-						</button>
+						<input value="Ingresar" name="login" type="submit" class="login100-form-btn mr-2" />
 						<a href="registro.php" class="login100-form-btn">Registrarme</a>
 					</div>
-					
 				</form>
+
+				<?php 
+					require_once 'validar_login.php';
+				?>
+
 			</div>
 		</div>
 	</div>

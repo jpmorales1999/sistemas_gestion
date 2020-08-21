@@ -56,7 +56,7 @@
             </div>
             <div class="clearfix"></div>
             <input type="submit" name="submit" class="btn btn-info btn-lg btn-responsive" value="Registrar">
-            <p class="mb-4"><a href="index.html" class="btn btn-info btn-lg btn-responsive">Volver</a><p>
+            <p class="mb-4"><a href="index.php" class="btn btn-info btn-lg btn-responsive">Volver</a><p>
         </form>
 
             <?php 
